@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendingMachine.Models
 {
-    public class Food : AbstractProduct 
+    public class Food :Product 
     {
         public string Type { get; set; }
 
@@ -15,12 +15,26 @@ namespace VendingMachine.Models
 
         public override string Examine()
         {
-            throw new NotImplementedException();
+            return $"return name: {Name} - price: {Price } information:{Information }- productId:{ProductId} -Type:{ Type }";
         }
 
         public override string Use()
         {
-            throw new NotImplementedException();
+            VendingMachinService vendingMachin = new VendingMachinService();
+            foreach (Product product in vendingMachin.storage)
+            {
+
+
+
+                if (vendingMachin.Purchase(ProductId) != null)
+                {
+                    return $"Instruction:{Information}";
+
+                }
+            }
+            return null;
+
         }
     }
+   
 }

@@ -5,18 +5,22 @@ using System.Text;
 namespace VendingMachine.Models
 {
     public interface IVending
-
+ 
     {
-        void Purchase(int ProductId);
+            Product Purchase(int Id);
 
-        List<string> ShowAll(List<AbstractProduct> productsList);
-        string Details(string info);
+            List<Product> ShowAll();
 
-        void InsertMoney();
+            string Details(Product selctedproduct);
 
-        Dictionary<int, int> EndTransaction();
+            void InsertMoney(int payment);
+
+            Dictionary<int, int> EndTransaction();
 
 
 
     }
+
+
+    
 }

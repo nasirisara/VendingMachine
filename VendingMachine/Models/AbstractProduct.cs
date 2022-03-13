@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendingMachine.Models
 {
-    public  abstract class AbstractProduct
+    public  abstract class Product
     {
         public string Name { get; set; }
 
@@ -15,22 +15,22 @@ namespace VendingMachine.Models
         public int ProductId { get; set; }
 
 
-        public AbstractProduct (string name)
+        public Product (string name)
         {
             Name = name;
 
         }
 
-        public AbstractProduct(string name, int price) : this (name)
+        public Product(string name, int price) : this (name)
         {
             Price = price;
 
         }
-        public AbstractProduct   (string name, int price, string information ): this (name, price)
+        public Product   (string name, int price, string information ): this (name, price)
         {
             Information = information;
         }
-        public AbstractProduct(string name, int price, string information, int productId) : this(name, price, information)
+        public Product(string name, int price, string information, int productId) : this(name, price, information)
         {
             ProductId = productId;
         }
